@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+
+    function persegi_panjang(a, b){
+        var luas = a*b;
+        return luas;
+    }
+    function persegi(a , b){
+        var luas = a*b;
+        return luas;
+    
+    }
+    function Segitiga(a , b , c){
+        var luas = a*b*c;
+        return luas;
+    }
+    function Lingkaran(a , b , c){
+        var luas = a*b*c;
+        return luas;
+    }
+
+
+
+var pilihan = prompt('Pilihlah Salah Satu (Persegi Panjang, Persegi, Segitiga, Lingkaran ) Untuk Mencari Luasnya!')
+
+    if(pilihan === 'Persegi Panjang'){
+        var a = prompt ('Masukkan Panjang')
+        var b = prompt ('Masukkan Lebar')
+        var jwb = a*b
+        document.write("Hasilnya Adalah =")
+        document.write(jwb)
+    }else if(pilihan === 'Persegi'){
+        var c = prompt('Masukkan Sisi Persegi')
+        var jwb = c*c
+        document.write("Maka Hasilnya Adalah =")
+        document.write(jwb)
+    }else if(pilihan === 'Segitiga'){
+        const d= 0.5;
+        var e = prompt('Masukkan Alas Segitiga')
+        var f = prompt('Masukkan Tinggi Segitiga')
+        var jwb = d*e*f
+        document.write("Maka Hasilnya Adalah =")
+        document.write(jwb)
+    }else if(pilihan ==='Lingkaran'){
+        const phi= 3.14;
+        var r = prompt('Masukkan Jari - Jari Lingkaran')
+        var jwb = phi*r*r
+        document.write("Hasilnya Adalah =")
+        document.write(jwb)
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    </script>
+</body>
+</html>
