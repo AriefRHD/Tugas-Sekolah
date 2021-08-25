@@ -1,0 +1,163 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
+
+    <title>Hello, world!</title>
+    <style>
+        .container{
+            width: 700px;
+        }
+    </style>
+
+
+  </head>
+  <body>
+
+
+    <div class="container">
+        <div class="form-group">
+            <label for="namasiswa">Nama Siswa</label>
+            <input type="text" class="form-control" id="txt_namasiswa">
+            
+        </div>
+        <label for="kelas">Kelas</label>
+        <select class="form-control" id="txt_kelas">
+            <option value="X">X</option>
+            <option value="XI">XI</option>
+            <option value="XII">XII</option>
+        </select>
+
+        <div class="form-group">
+            <label for="email">Alamat Email</label>
+            <input type="email" class="form-control" id="txt_email" placeholder="name@gmail.com">
+          </div>
+
+        <label for="alamat">Alamat</label>
+        <textarea class="form-control" id="txt_alamat" rows="3"></textarea>
+
+        <button class="btn btn-primary mt=4" onclick="add()">Simpan</button>
+
+        <table class="table mt-4">
+            <thead>
+              <tr>
+                <th scope="col">No</th>
+                <th scope="col">Nama</th>
+                <th scope="col">Kelas</th>
+                <th scope="col">Email</th>
+                <th scope="col">Alamat</th>
+                <th scope="col">Action</th>
+              </tr>
+            </thead>
+            <tbody id="tampildata">
+              
+            </tbody>
+        </table>
+    </div>
+
+    <script >
+        var namasiswa =  ['Doni','Dodi']
+        var kelas = ['X','XI']
+        var email = ['haha@gmail.com','hehe@gmail.com']
+        var alamat = ['Jakarta','Depok']
+
+        var tampil = document.getElementById('tampildata')
+
+        function showData() {
+            tampil.innerHTML = ""
+
+            for(i = 0; i<namasiswa.length; i++){
+                var nodata= i+1
+
+                tampil.innerHTML += "<tr>"+
+                "<th>"+nodata+"</th>"+
+                "<td>"+namasiswa[i]+"</td>"+
+                "<td>"+kelas[i]+"</td>"+
+                "<td>"+email[i]+"</td>"+
+                "<td>"+alamat[i]+"</td>"+
+                "<td>"+
+                    "<button class='btn btn-warning' onclick= 'edit(" +i+ ")'>Edit</button>"+
+                    "<button class='btn btn-danger' onclick= 'hapus(" +i+ ")'>Hapus</button>"+
+                "</td>"+
+              "</tr>"
+
+            }
+        }
+
+        showData()
+
+        function add() {
+            var namabaru = document.getElementById('txt_namasiswa').value
+            var kelasbaru = document.getElementById('txt_kelas').value
+            var emailbaru = document.getElementById('txt_email').value
+            var alamatbaru = document.getElementById('txt_alamat').value
+
+            namasiswa.push(namabaru)
+            kelas.push(kelasbaru)
+            email.push(emailbaru)
+            alamat.push(alamatbaru)
+
+            showData()
+        }
+
+        function hapus(i) {
+            
+
+
+            namasiswa.splice(i,1)
+            kelas.splice(i,1)
+            email.splice(i,1)
+            alamat.splice(i,1)
+
+            showData()
+        }
+
+        function edit(id) {
+            var mengubah = prompt("Add Nama",namasiswa[id])
+            namasiswa[id] = mengubah;
+
+            var mengubah = prompt("Add Kelas",kelas[id])
+            kelas[id] = mengubah;
+
+            var mengubah = prompt("Add Email",email[id])
+            email[id] = mengubah;
+
+            var mengubah = prompt("Add Alamat",alamat[id])
+            alamat[id] = mengubah;
+
+            showData()
+
+        }
+
+
+
+
+
+
+    </script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <!-- Optional JavaScript; choose one of the two! -->
+
+    <!-- Option 1: Bootstrap Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-U1DAWAznBHeqEIlVSCgzq+c9gqGAJn5c/t99JyeKa9xxaYpSvHU5awsuZVVFIhvj" crossorigin="anonymous"></script>
+
+   
+  </body>
+</html>
